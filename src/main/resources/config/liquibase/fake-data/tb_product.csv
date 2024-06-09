@@ -1,0 +1,11 @@
+id;product_sku;product_name;description;standard_cost;list_price;reorder_level;target_level;quantity_per_unit;discontinued;minimum_reorder_quantity;suggested_category;attachments;attachments_content_type;activation_status;brand_id
+1;wheat;organising medium gaffer;understand gadzooks;27793.14;1974.23;8164;11463;loftily lobby miserable;false;25847;bravely;../fake-data/blob/hipster.png;image/png;INVALID;1
+2;uniform;ah automation;thermals so;3653.37;18686.38;21366;10675;bruised;true;26465;stark;../fake-data/blob/hipster.png;image/png;BLOCKED;2
+3;hm colorfully next;suspicious;only;1207.42;8139.96;11105;16767;nonstop supervisor;false;7721;that;../fake-data/blob/hipster.png;image/png;PENDENT;3
+4;fooey eve considering;than bond vastly;ah uh-huh unpleasant;19596.15;18041.15;9552;28401;few towards;true;24392;suffer given;../fake-data/blob/hipster.png;image/png;ON_HOLD;4
+5;molecule;whenever;finally why;10319.09;11470.42;27706;17337;and finally;true;22219;wetly lest axis;../fake-data/blob/hipster.png;image/png;INVALID;5
+6;indeed kooky;that;except fairly;7701.17;20178.93;8895;22145;frugal responsible;false;25242;blah;../fake-data/blob/hipster.png;image/png;BLOCKED;6
+7;yet whenever crest;apud chilly tarry;scientific steep cause;32057.61;25287.16;8045;3174;where;false;9067;shalt;../fake-data/blob/hipster.png;image/png;ON_HOLD;7
+8;finally klutzy fishbone;whose;likely if;15851.08;26499.51;7246;10717;recording;false;12140;upward aside;../fake-data/blob/hipster.png;image/png;BLOCKED;8
+9;quack whether;import;abaft excitedly sleepy;10877.75;15924.43;9316;29647;atom till;true;15369;when;../fake-data/blob/hipster.png;image/png;ACTIVE;9
+10;down presentation;colorless;domesticate horror;29541.85;5193.33;22253;21481;anti enormously despite;false;18006;circa octavo absent;../fake-data/blob/hipster.png;image/png;INVALID;10

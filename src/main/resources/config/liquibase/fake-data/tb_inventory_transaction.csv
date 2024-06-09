@@ -1,0 +1,11 @@
+id;invoice_id;transaction_created_date;transaction_modified_date;quantity;transaction_comments;activation_status;supplier_id;product_id;warehouse_id
+1;8483;2024-06-09T11:32:45;2024-06-08T16:11:50;31298;furthermore silkworm highly;INACTIVE;1;1;1
+2;8331;2024-06-09T01:42:57;2024-06-09T05:24:09;13244;scourge hammer;ON_HOLD;2;2;2
+3;9684;2024-06-08T18:20:13;2024-06-09T12:00:43;20189;elegantly;ON_HOLD;3;3;3
+4;23441;2024-06-08T21:19:59;2024-06-09T01:01:38;22693;midst uh-huh aside;ACTIVE;4;4;4
+5;16869;2024-06-08T23:59:52;2024-06-09T08:54:21;9950;ha alphabetise;ON_HOLD;5;5;5
+6;5568;2024-06-09T03:36:19;2024-06-09T03:49:42;10149;really disadvantage;PENDENT;6;6;6
+7;7491;2024-06-08T19:58:48;2024-06-08T23:52:03;7679;ovary even parsley;BLOCKED;7;7;7
+8;26957;2024-06-09T04:18:45;2024-06-09T09:53:22;22600;oof forenenst ravel;ACTIVE;8;8;8
+9;4888;2024-06-09T07:37:27;2024-06-08T16:55:13;31185;when surge;ON_HOLD;9;9;9
+10;15390;2024-06-09T03:58:29;2024-06-09T10:56:10;30113;charge;ON_HOLD;10;10;10

@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "changelogDate": "20240609155112"
+  },
+  "applications": ["azimuteERPSpringReactMonolith03"],
+  "dto": "mapstruct",
+  "entityTableName": "tb_asset_collection",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "512"
+    },
+    {
+      "fieldName": "fullFilenamePath",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "512"
+    },
+    {
+      "fieldName": "activationStatus",
+      "fieldType": "ActivationStatusEnum",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "INACTIVE,ACTIVE,ON_HOLD,PENDENT,BLOCKED,INVALID"
+    }
+  ],
+  "name": "AssetCollection",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "asset",
+      "otherEntityRelationshipName": "assetCollection",
+      "relationshipName": "asset",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "article",
+      "otherEntityRelationshipName": "assetCollection",
+      "relationshipName": "article",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

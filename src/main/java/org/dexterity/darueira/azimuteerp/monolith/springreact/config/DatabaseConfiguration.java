@@ -1,0 +1,12 @@
+package org.dexterity.darueira.azimuteerp.monolith.springreact.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@Configuration
+@EnableJpaRepositories({ "org.dexterity.darueira.azimuteerp.monolith.springreact.repository" })
+@EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
+@EnableTransactionManagement
+public class DatabaseConfiguration {}

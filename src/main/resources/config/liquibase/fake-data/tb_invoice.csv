@@ -1,0 +1,11 @@
+id;business_code;invoice_date;due_date;description;tax_value;shipping_value;amount_due_value;number_of_installments_original;number_of_installments_paid;amount_paid_value;status;custom_attributes_details_json;activation_status
+1;whose upon shea;2024-06-09T12:03:28;2024-06-08T18:11:05;ouch;30071.28;10044.19;30478.27;3007;23108;19121.43;CANCELLED;jealously wearily;ACTIVE
+2;after thick;2024-06-09T11:31:52;2024-06-09T06:21:39;guess yearningly yum;5890.89;1637.81;26100.06;7448;6167;23012.88;CANCELLED;redhead;PENDENT
+3;necessary ouch;2024-06-09T01:27:34;2024-06-09T07:42:57;hmph yearly stealthily;3753;1720.41;14783.53;15255;7636;11461.89;PAID_ONCE;colorfully inside;INACTIVE
+4;zowie jell viol;2024-06-08T22:39:17;2024-06-09T00:44:21;adept junior;27918.26;31537;10634.64;23745;29447;3946.18;CANCELLED;mmm cable;INVALID
+5;whereas ack;2024-06-09T10:54:16;2024-06-09T14:00:54;bully;28740.65;19191.76;3984.91;15034;3179;32088.74;ISSUED;mobster thorough aw;INVALID
+6;difficult meanw;2024-06-09T00:58:44;2024-06-08T16:26:21;excluding huzzah;29640.93;28341.15;24342.84;9327;16936;29818.77;PAID_ONCE;dead ill-informed ugh;BLOCKED
+7;buoyant economi;2024-06-09T14:05:34;2024-06-09T15:04:24;pfft;13091.86;587.37;6573.15;21815;527;3139.57;CANCELLED;pace aw how;BLOCKED
+8;vivaciously pyr;2024-06-08T16:20:03;2024-06-08T20:46:39;builder frank semicolon;20730.92;16450.5;5885.94;30292;30369;16079.79;PAYING_IN_INSTALLMENTS;unabashedly conception lest;ACTIVE
+9;while withhold;2024-06-09T13:50:14;2024-06-09T12:01:06;wasabi gratefully;13634.2;21901.27;20812.3;11640;27369;21990.49;PAID_ONCE;considering;ON_HOLD
+10;upon gah blah;2024-06-09T09:34:29;2024-06-09T09:57:02;but among above;7525.6;9714.47;472.24;1745;27149;4385.48;CANCELLED;svelte bicker;INVALID

@@ -1,0 +1,11 @@
+id;name;status_raw_processing;full_filename_path;asset_raw_content_as_blob;asset_raw_content_as_blob_content_type;custom_attributes_details_json;asset_type_id
+1;alongside as;UPLOADING;phooey;../fake-data/blob/hipster.png;image/png;mission geez whereas;1
+2;even freeload;UPLOADING;presell grounded cuddly;../fake-data/blob/hipster.png;image/png;gee improvise;2
+3;remunerate since pillory;WAITING_FOR_PROCESSING;sandy judgementally interject;../fake-data/blob/hipster.png;image/png;irresponsible;3
+4;huzzah bitter forenenst;UPLOADED;rig;../fake-data/blob/hipster.png;image/png;aboard;4
+5;township oh;WAITING_FOR_PROCESSING;sweltering respond;../fake-data/blob/hipster.png;image/png;finally nicely supposing;5
+6;longingly;UPLOADED;seagull;../fake-data/blob/hipster.png;image/png;mellow romance instead;6
+7;thick;PROCESSING;phew ack but;../fake-data/blob/hipster.png;image/png;frivolous;7
+8;above;UPLOADING;packetize republic;../fake-data/blob/hipster.png;image/png;yesterday;8
+9;geez;WAITING_FOR_PROCESSING;flee into queue;../fake-data/blob/hipster.png;image/png;anti stitch;9
+10;over exacerbate;PROCESSING;creep;../fake-data/blob/hipster.png;image/png;qua loftily;10

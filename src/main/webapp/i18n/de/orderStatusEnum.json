@@ -1,0 +1,10 @@
+{
+  "azimuteErpSpringReactMonolith03App": {
+    "OrderStatusEnum": {
+      "null": "",
+      "COMPLETED": "COMPLETED",
+      "PENDING": "PENDING",
+      "CANCELLED": "CANCELLED"
+    }
+  }
+}

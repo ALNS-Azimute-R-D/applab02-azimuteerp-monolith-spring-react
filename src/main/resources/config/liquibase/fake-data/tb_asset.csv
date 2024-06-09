@@ -1,0 +1,11 @@
+id;name;storage_type_used;full_filename_path;status;preferred_purpose;asset_content_as_blob;asset_content_as_blob_content_type;activation_status;asset_type_id
+1;ah hasty;REMOTE_MINIO;behind infatuated blab;DISABLED;OTHER;../fake-data/blob/hipster.png;image/png;ACTIVE;1
+2;overcooked;REMOTE_MINIO;huge since beneath;DELETED;USER_AVATAR;../fake-data/blob/hipster.png;image/png;INACTIVE;2
+3;delightfully toward queasily;OTHER_CLOUD_STORAGE;absent phew phew;DISABLED;OTHER;../fake-data/blob/hipster.png;image/png;INACTIVE;3
+4;kite tensely;BLOB_IN_DB;pace;ENABLED;OTHER;../fake-data/blob/hipster.png;image/png;INVALID;4
+5;petrify;LOCAL_MINIO;likewise alarming talkative;DISABLED;LOGO_IMG;../fake-data/blob/hipster.png;image/png;BLOCKED;5
+6;gee;REMOTE_MINIO;morphology whoa;ENABLED;OTHER;../fake-data/blob/hipster.png;image/png;ACTIVE;6
+7;boohoo softly;OTHER_CLOUD_STORAGE;satirise chamber munch;DELETED;LOGO_IMG;../fake-data/blob/hipster.png;image/png;INACTIVE;7
+8;partially duckie;REMOTE_FILESYSTEM;yogurt now;DISABLED;LOGO_IMG;../fake-data/blob/hipster.png;image/png;INACTIVE;8
+9;round infantile;BLOB_IN_DB;hedgehog but meanwhile;ENABLED;PHOTO_ALBUM;../fake-data/blob/hipster.png;image/png;INACTIVE;9
+10;concerning;LOCAL_FILESYSTEM;nectar keenly;DISABLED;PHOTO_ALBUM;../fake-data/blob/hipster.png;image/png;INVALID;10
