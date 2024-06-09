@@ -142,11 +142,11 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://localhost:9080/realms/jhipster
+            issuer-uri: https://sso.darueira-devlocal.org.de/auth/realms/dexterity-apps
         registration:
           oidc:
-            client-id: web_app
-            client-secret: web_app
+            client-id: applab03-azimuteerp-monolith-spring-react
+            client-secret: qsv4avELVVuqds7x15eAtHSCYFFV9SXg
             scope: openid, profile, email, offline_access # last one for refresh tokens
       resourceserver:
         jwt:

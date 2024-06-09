@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.InvoiceTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.OrderTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.PaymentGatewayTestSamples.*;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TicketPurchasedTestSamples.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -58,5 +59,27 @@ class InvoiceTest {
         invoice.setOrdersLists(new HashSet<>());
         assertThat(invoice.getOrdersLists()).doesNotContain(orderBack);
         assertThat(orderBack.getInvoice()).isNull();
+    }
+
+    @Test
+    void ticketsPurchasedListTest() {
+        Invoice invoice = getInvoiceRandomSampleGenerator();
+        TicketPurchased ticketPurchasedBack = getTicketPurchasedRandomSampleGenerator();
+
+        invoice.addTicketsPurchasedList(ticketPurchasedBack);
+        assertThat(invoice.getTicketsPurchasedLists()).containsOnly(ticketPurchasedBack);
+        assertThat(ticketPurchasedBack.getInvoice()).isEqualTo(invoice);
+
+        invoice.removeTicketsPurchasedList(ticketPurchasedBack);
+        assertThat(invoice.getTicketsPurchasedLists()).doesNotContain(ticketPurchasedBack);
+        assertThat(ticketPurchasedBack.getInvoice()).isNull();
+
+        invoice.ticketsPurchasedLists(new HashSet<>(Set.of(ticketPurchasedBack)));
+        assertThat(invoice.getTicketsPurchasedLists()).containsOnly(ticketPurchasedBack);
+        assertThat(ticketPurchasedBack.getInvoice()).isEqualTo(invoice);
+
+        invoice.setTicketsPurchasedLists(new HashSet<>());
+        assertThat(invoice.getTicketsPurchasedLists()).doesNotContain(ticketPurchasedBack);
+        assertThat(ticketPurchasedBack.getInvoice()).isNull();
     }
 }

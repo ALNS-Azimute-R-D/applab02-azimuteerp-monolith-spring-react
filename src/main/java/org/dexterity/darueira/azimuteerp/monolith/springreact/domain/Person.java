@@ -143,6 +143,11 @@ public class Person implements Serializable {
             "organizationMembershipsLists",
             "suppliersLists",
             "customersLists",
+            "activitiesLists",
+            "promotedEventsLists",
+            "eventsProgramsLists",
+            "scheduledActivitiesLists",
+            "eventAttendeesLists",
         },
         allowSetters = true
     )
@@ -159,6 +164,11 @@ public class Person implements Serializable {
             "organizationMembershipsLists",
             "suppliersLists",
             "customersLists",
+            "activitiesLists",
+            "promotedEventsLists",
+            "eventsProgramsLists",
+            "scheduledActivitiesLists",
+            "eventAttendeesLists",
         },
         allowSetters = true
     )
@@ -178,6 +188,45 @@ public class Person implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "buyerPerson", "customerType", "district", "ordersLists" }, allowSetters = true)
     private Set<Customer> customersLists = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "createdByUser")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(
+        value = { "typeOfActivity", "createdByUser", "assetCollections", "scheduledActivitiesLists" },
+        allowSetters = true
+    )
+    private Set<Activity> activitiesLists = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "promoteurPerson")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(
+        value = {
+            "mainVenue",
+            "typeOfEvent",
+            "promoteurPerson",
+            "assetCollections",
+            "eventProgramsLists",
+            "ticketsPurchasedLists",
+            "eventAttendeesLists",
+        },
+        allowSetters = true
+    )
+    private Set<Event> promotedEventsLists = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "responsiblePerson")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "event", "program", "responsiblePerson" }, allowSetters = true)
+    private Set<EventProgram> eventsProgramsLists = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "responsiblePerson")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "program", "activity", "responsiblePerson", "assetCollections" }, allowSetters = true)
+    private Set<ScheduledActivity> scheduledActivitiesLists = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "attendeePerson")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "attendeePerson", "event", "ticketPurchased" }, allowSetters = true)
+    private Set<EventAttendee> eventAttendeesLists = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -640,6 +689,161 @@ public class Person implements Serializable {
     public Person removeCustomersList(Customer customer) {
         this.customersLists.remove(customer);
         customer.setBuyerPerson(null);
+        return this;
+    }
+
+    public Set<Activity> getActivitiesLists() {
+        return this.activitiesLists;
+    }
+
+    public void setActivitiesLists(Set<Activity> activities) {
+        if (this.activitiesLists != null) {
+            this.activitiesLists.forEach(i -> i.setCreatedByUser(null));
+        }
+        if (activities != null) {
+            activities.forEach(i -> i.setCreatedByUser(this));
+        }
+        this.activitiesLists = activities;
+    }
+
+    public Person activitiesLists(Set<Activity> activities) {
+        this.setActivitiesLists(activities);
+        return this;
+    }
+
+    public Person addActivitiesList(Activity activity) {
+        this.activitiesLists.add(activity);
+        activity.setCreatedByUser(this);
+        return this;
+    }
+
+    public Person removeActivitiesList(Activity activity) {
+        this.activitiesLists.remove(activity);
+        activity.setCreatedByUser(null);
+        return this;
+    }
+
+    public Set<Event> getPromotedEventsLists() {
+        return this.promotedEventsLists;
+    }
+
+    public void setPromotedEventsLists(Set<Event> events) {
+        if (this.promotedEventsLists != null) {
+            this.promotedEventsLists.forEach(i -> i.setPromoteurPerson(null));
+        }
+        if (events != null) {
+            events.forEach(i -> i.setPromoteurPerson(this));
+        }
+        this.promotedEventsLists = events;
+    }
+
+    public Person promotedEventsLists(Set<Event> events) {
+        this.setPromotedEventsLists(events);
+        return this;
+    }
+
+    public Person addPromotedEventsList(Event event) {
+        this.promotedEventsLists.add(event);
+        event.setPromoteurPerson(this);
+        return this;
+    }
+
+    public Person removePromotedEventsList(Event event) {
+        this.promotedEventsLists.remove(event);
+        event.setPromoteurPerson(null);
+        return this;
+    }
+
+    public Set<EventProgram> getEventsProgramsLists() {
+        return this.eventsProgramsLists;
+    }
+
+    public void setEventsProgramsLists(Set<EventProgram> eventPrograms) {
+        if (this.eventsProgramsLists != null) {
+            this.eventsProgramsLists.forEach(i -> i.setResponsiblePerson(null));
+        }
+        if (eventPrograms != null) {
+            eventPrograms.forEach(i -> i.setResponsiblePerson(this));
+        }
+        this.eventsProgramsLists = eventPrograms;
+    }
+
+    public Person eventsProgramsLists(Set<EventProgram> eventPrograms) {
+        this.setEventsProgramsLists(eventPrograms);
+        return this;
+    }
+
+    public Person addEventsProgramsList(EventProgram eventProgram) {
+        this.eventsProgramsLists.add(eventProgram);
+        eventProgram.setResponsiblePerson(this);
+        return this;
+    }
+
+    public Person removeEventsProgramsList(EventProgram eventProgram) {
+        this.eventsProgramsLists.remove(eventProgram);
+        eventProgram.setResponsiblePerson(null);
+        return this;
+    }
+
+    public Set<ScheduledActivity> getScheduledActivitiesLists() {
+        return this.scheduledActivitiesLists;
+    }
+
+    public void setScheduledActivitiesLists(Set<ScheduledActivity> scheduledActivities) {
+        if (this.scheduledActivitiesLists != null) {
+            this.scheduledActivitiesLists.forEach(i -> i.setResponsiblePerson(null));
+        }
+        if (scheduledActivities != null) {
+            scheduledActivities.forEach(i -> i.setResponsiblePerson(this));
+        }
+        this.scheduledActivitiesLists = scheduledActivities;
+    }
+
+    public Person scheduledActivitiesLists(Set<ScheduledActivity> scheduledActivities) {
+        this.setScheduledActivitiesLists(scheduledActivities);
+        return this;
+    }
+
+    public Person addScheduledActivitiesList(ScheduledActivity scheduledActivity) {
+        this.scheduledActivitiesLists.add(scheduledActivity);
+        scheduledActivity.setResponsiblePerson(this);
+        return this;
+    }
+
+    public Person removeScheduledActivitiesList(ScheduledActivity scheduledActivity) {
+        this.scheduledActivitiesLists.remove(scheduledActivity);
+        scheduledActivity.setResponsiblePerson(null);
+        return this;
+    }
+
+    public Set<EventAttendee> getEventAttendeesLists() {
+        return this.eventAttendeesLists;
+    }
+
+    public void setEventAttendeesLists(Set<EventAttendee> eventAttendees) {
+        if (this.eventAttendeesLists != null) {
+            this.eventAttendeesLists.forEach(i -> i.setAttendeePerson(null));
+        }
+        if (eventAttendees != null) {
+            eventAttendees.forEach(i -> i.setAttendeePerson(this));
+        }
+        this.eventAttendeesLists = eventAttendees;
+    }
+
+    public Person eventAttendeesLists(Set<EventAttendee> eventAttendees) {
+        this.setEventAttendeesLists(eventAttendees);
+        return this;
+    }
+
+    public Person addEventAttendeesList(EventAttendee eventAttendee) {
+        this.eventAttendeesLists.add(eventAttendee);
+        eventAttendee.setAttendeePerson(this);
+        return this;
+    }
+
+    public Person removeEventAttendeesList(EventAttendee eventAttendee) {
+        this.eventAttendeesLists.remove(eventAttendee);
+        eventAttendee.setAttendeePerson(null);
         return this;
     }
 

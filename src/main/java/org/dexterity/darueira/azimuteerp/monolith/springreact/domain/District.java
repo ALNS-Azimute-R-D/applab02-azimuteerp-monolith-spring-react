@@ -50,7 +50,7 @@ public class District implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "district")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "district" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "district", "venuesLists" }, allowSetters = true)
     private Set<CommonLocality> commonLocalitiesLists = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "district")
@@ -64,6 +64,11 @@ public class District implements Serializable {
             "organizationMembershipsLists",
             "suppliersLists",
             "customersLists",
+            "activitiesLists",
+            "promotedEventsLists",
+            "eventsProgramsLists",
+            "scheduledActivitiesLists",
+            "eventAttendeesLists",
         },
         allowSetters = true
     )

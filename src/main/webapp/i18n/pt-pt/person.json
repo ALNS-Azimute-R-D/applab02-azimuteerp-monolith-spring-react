@@ -45,7 +45,12 @@
       "managedPersonsList": "Managed Persons List",
       "organizationMembershipsList": "Organization Memberships List",
       "suppliersList": "Suppliers List",
-      "customersList": "Customers List"
+      "customersList": "Customers List",
+      "activitiesList": "Activities List",
+      "promotedEventsList": "Promoted Events List",
+      "eventsProgramsList": "Events Programs List",
+      "scheduledActivitiesList": "Scheduled Activities List",
+      "eventAttendeesList": "Event Attendees List"
     }
   }
 }

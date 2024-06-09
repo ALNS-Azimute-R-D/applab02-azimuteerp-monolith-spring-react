@@ -59,6 +59,7 @@ public class CacheConfiguration {
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.District.class.getName() + ".personsLists");
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.District.class.getName() + ".customersLists");
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.CommonLocality.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.CommonLocality.class.getName() + ".venuesLists");
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Tenant.class.getName());
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Tenant.class.getName() + ".organizationsLists");
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfOrganization.class.getName());
@@ -108,6 +109,14 @@ public class CacheConfiguration {
             );
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Person.class.getName() + ".suppliersLists");
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Person.class.getName() + ".customersLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Person.class.getName() + ".activitiesLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Person.class.getName() + ".promotedEventsLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Person.class.getName() + ".eventsProgramsLists");
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Person.class.getName() + ".scheduledActivitiesLists"
+            );
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Person.class.getName() + ".eventAttendeesLists");
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.OrganizationRole.class.getName());
             createCache(
                 cm,
@@ -135,8 +144,18 @@ public class CacheConfiguration {
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.AssetCollection.class.getName());
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.AssetCollection.class.getName() + ".assets");
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.AssetCollection.class.getName() + ".articles");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.AssetCollection.class.getName() + ".events");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.AssetCollection.class.getName() + ".activities");
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.AssetCollection.class.getName() + ".scheduledActivities"
+            );
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Invoice.class.getName());
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Invoice.class.getName() + ".ordersLists");
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Invoice.class.getName() + ".ticketsPurchasedLists"
+            );
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.PaymentGateway.class.getName());
             createCache(
                 cm,
@@ -183,6 +202,67 @@ public class CacheConfiguration {
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Order.class.getName());
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Order.class.getName() + ".orderItemsLists");
             createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.OrderItem.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfArtmedia.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfArtmedia.class.getName() + ".artistsLists");
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfArtmedia.class.getName() + ".artworksLists"
+            );
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfArtist.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfArtist.class.getName() + ".artistsLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ArtisticGenre.class.getName());
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ArtisticGenre.class.getName() + ".artisticGenres"
+            );
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Artist.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Artist.class.getName() + ".artists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Artist.class.getName() + ".artworkCastsLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Artist.class.getName() + ".linkedArtistsLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Artwork.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Artwork.class.getName() + ".artworkCastsLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Artwork.class.getName() + ".linkedArtworksLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ArtworkCast.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfEvent.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfEvent.class.getName() + ".eventsLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfVenue.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfVenue.class.getName() + ".venuesLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfActivity.class.getName());
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfActivity.class.getName() + ".activitiesLists"
+            );
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Venue.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Venue.class.getName() + ".eventsLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Activity.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Activity.class.getName() + ".assetCollections");
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Activity.class.getName() + ".scheduledActivitiesLists"
+            );
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Event.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Event.class.getName() + ".assetCollections");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Event.class.getName() + ".eventProgramsLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Event.class.getName() + ".ticketsPurchasedLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Event.class.getName() + ".eventAttendeesLists");
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Program.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Program.class.getName() + ".programsLists");
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.Program.class.getName() + ".scheduledActivitiesLists"
+            );
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.EventProgram.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ScheduledActivity.class.getName());
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ScheduledActivity.class.getName() + ".assetCollections"
+            );
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.EventAttendee.class.getName());
+            createCache(cm, org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TicketPurchased.class.getName());
+            createCache(
+                cm,
+                org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TicketPurchased.class.getName() + ".eventAttendeesLists"
+            );
             // jhipster-needle-ehcache-add-entry
         };
     }

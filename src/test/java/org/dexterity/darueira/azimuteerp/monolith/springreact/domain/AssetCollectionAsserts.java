@@ -62,6 +62,11 @@ public class AssetCollectionAsserts {
         assertThat(expected)
             .as("Verify AssetCollection relationships")
             .satisfies(e -> assertThat(e.getAssets()).as("check assets").isEqualTo(actual.getAssets()))
-            .satisfies(e -> assertThat(e.getArticles()).as("check articles").isEqualTo(actual.getArticles()));
+            .satisfies(e -> assertThat(e.getArticles()).as("check articles").isEqualTo(actual.getArticles()))
+            .satisfies(e -> assertThat(e.getEvents()).as("check events").isEqualTo(actual.getEvents()))
+            .satisfies(e -> assertThat(e.getActivities()).as("check activities").isEqualTo(actual.getActivities()))
+            .satisfies(
+                e -> assertThat(e.getScheduledActivities()).as("check scheduledActivities").isEqualTo(actual.getScheduledActivities())
+            );
     }
 }

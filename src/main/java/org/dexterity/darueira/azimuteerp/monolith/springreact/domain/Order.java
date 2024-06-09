@@ -64,7 +64,7 @@ public class Order implements Serializable {
     private Set<OrderItem> orderItemsLists = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "preferrablePaymentGateway", "ordersLists" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "preferrablePaymentGateway", "ordersLists", "ticketsPurchasedLists" }, allowSetters = true)
     private Invoice invoice;
 
     @ManyToOne(optional = false)

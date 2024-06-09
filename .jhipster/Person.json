@@ -187,6 +187,41 @@
       "relationshipName": "customersList",
       "relationshipSide": "right",
       "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "activity",
+      "otherEntityRelationshipName": "createdByUser",
+      "relationshipName": "activitiesList",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "event",
+      "otherEntityRelationshipName": "promoteurPerson",
+      "relationshipName": "promotedEventsList",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "eventProgram",
+      "otherEntityRelationshipName": "responsiblePerson",
+      "relationshipName": "eventsProgramsList",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "scheduledActivity",
+      "otherEntityRelationshipName": "responsiblePerson",
+      "relationshipName": "scheduledActivitiesList",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "eventAttendee",
+      "otherEntityRelationshipName": "attendeePerson",
+      "relationshipName": "eventAttendeesList",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
     }
   ],
   "searchEngine": "no",

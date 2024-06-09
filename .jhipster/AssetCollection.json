@@ -4,7 +4,7 @@
   },
   "applications": ["azimuteERPSpringReactMonolith03"],
   "dto": "mapstruct",
-  "entityTableName": "tb_asset_collection",
+  "entityTableName": "tb_assets_collection",
   "fields": [
     {
       "fieldName": "name",
@@ -39,6 +39,27 @@
       "otherEntityName": "article",
       "otherEntityRelationshipName": "assetCollection",
       "relationshipName": "article",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "event",
+      "otherEntityRelationshipName": "assetCollection",
+      "relationshipName": "event",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "activity",
+      "otherEntityRelationshipName": "assetCollection",
+      "relationshipName": "activity",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "scheduledActivity",
+      "otherEntityRelationshipName": "assetCollection",
+      "relationshipName": "scheduledActivity",
       "relationshipSide": "right",
       "relationshipType": "many-to-many"
     }

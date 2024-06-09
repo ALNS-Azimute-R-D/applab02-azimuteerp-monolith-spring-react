@@ -90,6 +90,11 @@ public class Invoice implements Serializable {
     @JsonIgnoreProperties(value = { "orderItemsLists", "invoice", "customer" }, allowSetters = true)
     private Set<Order> ordersLists = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "invoice")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "event", "invoice", "eventAttendeesLists" }, allowSetters = true)
+    private Set<TicketPurchased> ticketsPurchasedLists = new HashSet<>();
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -315,6 +320,37 @@ public class Invoice implements Serializable {
     public Invoice removeOrdersList(Order order) {
         this.ordersLists.remove(order);
         order.setInvoice(null);
+        return this;
+    }
+
+    public Set<TicketPurchased> getTicketsPurchasedLists() {
+        return this.ticketsPurchasedLists;
+    }
+
+    public void setTicketsPurchasedLists(Set<TicketPurchased> ticketPurchaseds) {
+        if (this.ticketsPurchasedLists != null) {
+            this.ticketsPurchasedLists.forEach(i -> i.setInvoice(null));
+        }
+        if (ticketPurchaseds != null) {
+            ticketPurchaseds.forEach(i -> i.setInvoice(this));
+        }
+        this.ticketsPurchasedLists = ticketPurchaseds;
+    }
+
+    public Invoice ticketsPurchasedLists(Set<TicketPurchased> ticketPurchaseds) {
+        this.setTicketsPurchasedLists(ticketPurchaseds);
+        return this;
+    }
+
+    public Invoice addTicketsPurchasedList(TicketPurchased ticketPurchased) {
+        this.ticketsPurchasedLists.add(ticketPurchased);
+        ticketPurchased.setInvoice(this);
+        return this;
+    }
+
+    public Invoice removeTicketsPurchasedList(TicketPurchased ticketPurchased) {
+        this.ticketsPurchasedLists.remove(ticketPurchased);
+        ticketPurchased.setInvoice(null);
         return this;
     }
 

@@ -65,6 +65,13 @@
       "relationshipSide": "left",
       "relationshipType": "many-to-one",
       "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "venue",
+      "otherEntityRelationshipName": "commonLocality",
+      "relationshipName": "venuesList",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
     }
   ],
   "searchEngine": "no",

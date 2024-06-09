@@ -88,6 +88,13 @@
       "relationshipName": "ordersList",
       "relationshipSide": "right",
       "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "ticketPurchased",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "ticketsPurchasedList",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
     }
   ],
   "searchEngine": "no",

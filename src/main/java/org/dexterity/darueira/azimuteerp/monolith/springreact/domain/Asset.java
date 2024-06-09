@@ -78,7 +78,7 @@ public class Asset implements Serializable {
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "assets")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "assets", "articles" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "assets", "articles", "events", "activities", "scheduledActivities" }, allowSetters = true)
     private Set<AssetCollection> assetCollections = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

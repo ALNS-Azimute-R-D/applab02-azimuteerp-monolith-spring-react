@@ -65,7 +65,7 @@ public class Article implements Serializable {
         inverseJoinColumns = @JoinColumn(name = "asset_collection_id")
     )
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "assets", "articles" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "assets", "articles", "events", "activities", "scheduledActivities" }, allowSetters = true)
     private Set<AssetCollection> assetCollections = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -115,6 +115,57 @@ const EntitiesMenu = () => {
       <MenuItem icon="asterisk" to="/order-item">
         <Translate contentKey="global.menu.entities.orderItem" />
       </MenuItem>
+      <MenuItem icon="asterisk" to="/type-of-artmedia">
+        <Translate contentKey="global.menu.entities.typeOfArtmedia" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/type-of-artist">
+        <Translate contentKey="global.menu.entities.typeOfArtist" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/artistic-genre">
+        <Translate contentKey="global.menu.entities.artisticGenre" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/artist">
+        <Translate contentKey="global.menu.entities.artist" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/artwork">
+        <Translate contentKey="global.menu.entities.artwork" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/artwork-cast">
+        <Translate contentKey="global.menu.entities.artworkCast" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/type-of-event">
+        <Translate contentKey="global.menu.entities.typeOfEvent" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/type-of-venue">
+        <Translate contentKey="global.menu.entities.typeOfVenue" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/type-of-activity">
+        <Translate contentKey="global.menu.entities.typeOfActivity" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/venue">
+        <Translate contentKey="global.menu.entities.venue" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/activity">
+        <Translate contentKey="global.menu.entities.activity" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/event">
+        <Translate contentKey="global.menu.entities.event" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/program">
+        <Translate contentKey="global.menu.entities.program" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/event-program">
+        <Translate contentKey="global.menu.entities.eventProgram" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/scheduled-activity">
+        <Translate contentKey="global.menu.entities.scheduledActivity" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/event-attendee">
+        <Translate contentKey="global.menu.entities.eventAttendee" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/ticket-purchased">
+        <Translate contentKey="global.menu.entities.ticketPurchased" />
+      </MenuItem>
       {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
     </>
   );

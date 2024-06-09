@@ -34,6 +34,23 @@ import category from 'app/entities/category/category.reducer';
 import article from 'app/entities/article/article.reducer';
 import order from 'app/entities/order/order.reducer';
 import orderItem from 'app/entities/order-item/order-item.reducer';
+import typeOfArtmedia from 'app/entities/type-of-artmedia/type-of-artmedia.reducer';
+import typeOfArtist from 'app/entities/type-of-artist/type-of-artist.reducer';
+import artisticGenre from 'app/entities/artistic-genre/artistic-genre.reducer';
+import artist from 'app/entities/artist/artist.reducer';
+import artwork from 'app/entities/artwork/artwork.reducer';
+import artworkCast from 'app/entities/artwork-cast/artwork-cast.reducer';
+import typeOfEvent from 'app/entities/type-of-event/type-of-event.reducer';
+import typeOfVenue from 'app/entities/type-of-venue/type-of-venue.reducer';
+import typeOfActivity from 'app/entities/type-of-activity/type-of-activity.reducer';
+import venue from 'app/entities/venue/venue.reducer';
+import activity from 'app/entities/activity/activity.reducer';
+import event from 'app/entities/event/event.reducer';
+import program from 'app/entities/program/program.reducer';
+import eventProgram from 'app/entities/event-program/event-program.reducer';
+import scheduledActivity from 'app/entities/scheduled-activity/scheduled-activity.reducer';
+import eventAttendee from 'app/entities/event-attendee/event-attendee.reducer';
+import ticketPurchased from 'app/entities/ticket-purchased/ticket-purchased.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -73,6 +90,23 @@ const entitiesReducers = {
   article,
   order,
   orderItem,
+  typeOfArtmedia,
+  typeOfArtist,
+  artisticGenre,
+  artist,
+  artwork,
+  artworkCast,
+  typeOfEvent,
+  typeOfVenue,
+  typeOfActivity,
+  venue,
+  activity,
+  event,
+  program,
+  eventProgram,
+  scheduledActivity,
+  eventAttendee,
+  ticketPurchased,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

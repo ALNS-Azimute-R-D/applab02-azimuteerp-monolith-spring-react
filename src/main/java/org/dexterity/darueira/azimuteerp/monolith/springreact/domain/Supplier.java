@@ -106,6 +106,11 @@ public class Supplier implements Serializable {
             "organizationMembershipsLists",
             "suppliersLists",
             "customersLists",
+            "activitiesLists",
+            "promotedEventsLists",
+            "eventsProgramsLists",
+            "scheduledActivitiesLists",
+            "eventAttendeesLists",
         },
         allowSetters = true
     )

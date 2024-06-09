@@ -47,6 +47,23 @@
     <include file="config/liquibase/changelog/20240609160412_added_entity_Article.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20240609160512_added_entity_Order.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20240609160612_added_entity_OrderItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160613_added_entity_TypeOfArtmedia.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160614_added_entity_TypeOfArtist.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160615_added_entity_ArtisticGenre.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160616_added_entity_Artist.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160617_added_entity_Artwork.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160618_added_entity_ArtworkCast.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160619_added_entity_TypeOfEvent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160620_added_entity_TypeOfVenue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160621_added_entity_TypeOfActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160622_added_entity_Venue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160623_added_entity_Activity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160624_added_entity_Event.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160625_added_entity_Program.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160626_added_entity_EventProgram.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160627_added_entity_ScheduledActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160628_added_entity_EventAttendee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160629_added_entity_TicketPurchased.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20240609153212_added_entity_constraints_Province.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20240609153312_added_entity_constraints_TownCity.xml" relativeToChangelogFile="false"/>
@@ -75,6 +92,16 @@
     <include file="config/liquibase/changelog/20240609160412_added_entity_constraints_Article.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20240609160512_added_entity_constraints_Order.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20240609160612_added_entity_constraints_OrderItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160616_added_entity_constraints_Artist.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160617_added_entity_constraints_Artwork.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160618_added_entity_constraints_ArtworkCast.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160622_added_entity_constraints_Venue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160623_added_entity_constraints_Activity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160624_added_entity_constraints_Event.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160626_added_entity_constraints_EventProgram.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160627_added_entity_constraints_ScheduledActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160628_added_entity_constraints_EventAttendee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240609160629_added_entity_constraints_TicketPurchased.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

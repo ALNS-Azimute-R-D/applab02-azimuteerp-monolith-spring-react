@@ -1,9 +1,12 @@
 package org.dexterity.darueira.azimuteerp.monolith.springreact.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ActivityTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ArticleTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.AssetCollectionTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.AssetTestSamples.*;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.EventTestSamples.*;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ScheduledActivityTestSamples.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -64,5 +67,71 @@ class AssetCollectionTest {
         assetCollection.setArticles(new HashSet<>());
         assertThat(assetCollection.getArticles()).doesNotContain(articleBack);
         assertThat(articleBack.getAssetCollections()).doesNotContain(assetCollection);
+    }
+
+    @Test
+    void eventTest() {
+        AssetCollection assetCollection = getAssetCollectionRandomSampleGenerator();
+        Event eventBack = getEventRandomSampleGenerator();
+
+        assetCollection.addEvent(eventBack);
+        assertThat(assetCollection.getEvents()).containsOnly(eventBack);
+        assertThat(eventBack.getAssetCollections()).containsOnly(assetCollection);
+
+        assetCollection.removeEvent(eventBack);
+        assertThat(assetCollection.getEvents()).doesNotContain(eventBack);
+        assertThat(eventBack.getAssetCollections()).doesNotContain(assetCollection);
+
+        assetCollection.events(new HashSet<>(Set.of(eventBack)));
+        assertThat(assetCollection.getEvents()).containsOnly(eventBack);
+        assertThat(eventBack.getAssetCollections()).containsOnly(assetCollection);
+
+        assetCollection.setEvents(new HashSet<>());
+        assertThat(assetCollection.getEvents()).doesNotContain(eventBack);
+        assertThat(eventBack.getAssetCollections()).doesNotContain(assetCollection);
+    }
+
+    @Test
+    void activityTest() {
+        AssetCollection assetCollection = getAssetCollectionRandomSampleGenerator();
+        Activity activityBack = getActivityRandomSampleGenerator();
+
+        assetCollection.addActivity(activityBack);
+        assertThat(assetCollection.getActivities()).containsOnly(activityBack);
+        assertThat(activityBack.getAssetCollections()).containsOnly(assetCollection);
+
+        assetCollection.removeActivity(activityBack);
+        assertThat(assetCollection.getActivities()).doesNotContain(activityBack);
+        assertThat(activityBack.getAssetCollections()).doesNotContain(assetCollection);
+
+        assetCollection.activities(new HashSet<>(Set.of(activityBack)));
+        assertThat(assetCollection.getActivities()).containsOnly(activityBack);
+        assertThat(activityBack.getAssetCollections()).containsOnly(assetCollection);
+
+        assetCollection.setActivities(new HashSet<>());
+        assertThat(assetCollection.getActivities()).doesNotContain(activityBack);
+        assertThat(activityBack.getAssetCollections()).doesNotContain(assetCollection);
+    }
+
+    @Test
+    void scheduledActivityTest() {
+        AssetCollection assetCollection = getAssetCollectionRandomSampleGenerator();
+        ScheduledActivity scheduledActivityBack = getScheduledActivityRandomSampleGenerator();
+
+        assetCollection.addScheduledActivity(scheduledActivityBack);
+        assertThat(assetCollection.getScheduledActivities()).containsOnly(scheduledActivityBack);
+        assertThat(scheduledActivityBack.getAssetCollections()).containsOnly(assetCollection);
+
+        assetCollection.removeScheduledActivity(scheduledActivityBack);
+        assertThat(assetCollection.getScheduledActivities()).doesNotContain(scheduledActivityBack);
+        assertThat(scheduledActivityBack.getAssetCollections()).doesNotContain(assetCollection);
+
+        assetCollection.scheduledActivities(new HashSet<>(Set.of(scheduledActivityBack)));
+        assertThat(assetCollection.getScheduledActivities()).containsOnly(scheduledActivityBack);
+        assertThat(scheduledActivityBack.getAssetCollections()).containsOnly(assetCollection);
+
+        assetCollection.setScheduledActivities(new HashSet<>());
+        assertThat(assetCollection.getScheduledActivities()).doesNotContain(scheduledActivityBack);
+        assertThat(scheduledActivityBack.getAssetCollections()).doesNotContain(assetCollection);
     }
 }

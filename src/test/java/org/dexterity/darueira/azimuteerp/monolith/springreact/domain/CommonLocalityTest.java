@@ -3,7 +3,10 @@ package org.dexterity.darueira.azimuteerp.monolith.springreact.domain;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.CommonLocalityTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.DistrictTestSamples.*;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.VenueTestSamples.*;
 
+import java.util.HashSet;
+import java.util.Set;
 import org.dexterity.darueira.azimuteerp.monolith.springreact.web.rest.TestUtil;
 import org.junit.jupiter.api.Test;
 
@@ -33,5 +36,27 @@ class CommonLocalityTest {
 
         commonLocality.district(null);
         assertThat(commonLocality.getDistrict()).isNull();
+    }
+
+    @Test
+    void venuesListTest() {
+        CommonLocality commonLocality = getCommonLocalityRandomSampleGenerator();
+        Venue venueBack = getVenueRandomSampleGenerator();
+
+        commonLocality.addVenuesList(venueBack);
+        assertThat(commonLocality.getVenuesLists()).containsOnly(venueBack);
+        assertThat(venueBack.getCommonLocality()).isEqualTo(commonLocality);
+
+        commonLocality.removeVenuesList(venueBack);
+        assertThat(commonLocality.getVenuesLists()).doesNotContain(venueBack);
+        assertThat(venueBack.getCommonLocality()).isNull();
+
+        commonLocality.venuesLists(new HashSet<>(Set.of(venueBack)));
+        assertThat(commonLocality.getVenuesLists()).containsOnly(venueBack);
+        assertThat(venueBack.getCommonLocality()).isEqualTo(commonLocality);
+
+        commonLocality.setVenuesLists(new HashSet<>());
+        assertThat(commonLocality.getVenuesLists()).doesNotContain(venueBack);
+        assertThat(venueBack.getCommonLocality()).isNull();
     }
 }

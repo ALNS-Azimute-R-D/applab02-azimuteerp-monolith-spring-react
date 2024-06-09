@@ -75,6 +75,45 @@ export const AssetCollectionDetail = () => {
                 ))
               : null}
           </dd>
+          <dt>
+            <Translate contentKey="azimuteErpSpringReactMonolith03App.assetCollection.event">Event</Translate>
+          </dt>
+          <dd>
+            {assetCollectionEntity.events
+              ? assetCollectionEntity.events.map((val, i) => (
+                  <span key={val.id}>
+                    <a>{val.id}</a>
+                    {assetCollectionEntity.events && i === assetCollectionEntity.events.length - 1 ? '' : ', '}
+                  </span>
+                ))
+              : null}
+          </dd>
+          <dt>
+            <Translate contentKey="azimuteErpSpringReactMonolith03App.assetCollection.activity">Activity</Translate>
+          </dt>
+          <dd>
+            {assetCollectionEntity.activities
+              ? assetCollectionEntity.activities.map((val, i) => (
+                  <span key={val.id}>
+                    <a>{val.id}</a>
+                    {assetCollectionEntity.activities && i === assetCollectionEntity.activities.length - 1 ? '' : ', '}
+                  </span>
+                ))
+              : null}
+          </dd>
+          <dt>
+            <Translate contentKey="azimuteErpSpringReactMonolith03App.assetCollection.scheduledActivity">Scheduled Activity</Translate>
+          </dt>
+          <dd>
+            {assetCollectionEntity.scheduledActivities
+              ? assetCollectionEntity.scheduledActivities.map((val, i) => (
+                  <span key={val.id}>
+                    <a>{val.id}</a>
+                    {assetCollectionEntity.scheduledActivities && i === assetCollectionEntity.scheduledActivities.length - 1 ? '' : ', '}
+                  </span>
+                ))
+              : null}
+          </dd>
         </dl>
         <Button tag={Link} to="/asset-collection" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

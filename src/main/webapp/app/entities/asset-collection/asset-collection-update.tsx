@@ -12,6 +12,12 @@ import { IAsset } from 'app/shared/model/asset.model';
 import { getEntities as getAssets } from 'app/entities/asset/asset.reducer';
 import { IArticle } from 'app/shared/model/article.model';
 import { getEntities as getArticles } from 'app/entities/article/article.reducer';
+import { IEvent } from 'app/shared/model/event.model';
+import { getEntities as getEvents } from 'app/entities/event/event.reducer';
+import { IActivity } from 'app/shared/model/activity.model';
+import { getEntities as getActivities } from 'app/entities/activity/activity.reducer';
+import { IScheduledActivity } from 'app/shared/model/scheduled-activity.model';
+import { getEntities as getScheduledActivities } from 'app/entities/scheduled-activity/scheduled-activity.reducer';
 import { IAssetCollection } from 'app/shared/model/asset-collection.model';
 import { ActivationStatusEnum } from 'app/shared/model/enumerations/activation-status-enum.model';
 import { getEntity, updateEntity, createEntity, reset } from './asset-collection.reducer';
@@ -26,6 +32,9 @@ export const AssetCollectionUpdate = () => {
 
   const assets = useAppSelector(state => state.asset.entities);
   const articles = useAppSelector(state => state.article.entities);
+  const events = useAppSelector(state => state.event.entities);
+  const activities = useAppSelector(state => state.activity.entities);
+  const scheduledActivities = useAppSelector(state => state.scheduledActivity.entities);
   const assetCollectionEntity = useAppSelector(state => state.assetCollection.entity);
   const loading = useAppSelector(state => state.assetCollection.loading);
   const updating = useAppSelector(state => state.assetCollection.updating);
@@ -45,6 +54,9 @@ export const AssetCollectionUpdate = () => {
 
     dispatch(getAssets({}));
     dispatch(getArticles({}));
+    dispatch(getEvents({}));
+    dispatch(getActivities({}));
+    dispatch(getScheduledActivities({}));
   }, []);
 
   useEffect(() => {
@@ -64,6 +76,9 @@ export const AssetCollectionUpdate = () => {
       ...values,
       assets: mapIdList(values.assets),
       articles: mapIdList(values.articles),
+      events: mapIdList(values.events),
+      activities: mapIdList(values.activities),
+      scheduledActivities: mapIdList(values.scheduledActivities),
     };
 
     if (isNew) {
@@ -81,6 +96,9 @@ export const AssetCollectionUpdate = () => {
           ...assetCollectionEntity,
           assets: assetCollectionEntity?.assets?.map(e => e.id.toString()),
           articles: assetCollectionEntity?.articles?.map(e => e.id.toString()),
+          events: assetCollectionEntity?.events?.map(e => e.id.toString()),
+          activities: assetCollectionEntity?.activities?.map(e => e.id.toString()),
+          scheduledActivities: assetCollectionEntity?.scheduledActivities?.map(e => e.id.toString()),
         };
 
   return (
@@ -172,6 +190,57 @@ export const AssetCollectionUpdate = () => {
                 <option value="" key="0" />
                 {articles
                   ? articles.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
+                label={translate('azimuteErpSpringReactMonolith03App.assetCollection.event')}
+                id="asset-collection-event"
+                data-cy="event"
+                type="select"
+                multiple
+                name="events"
+              >
+                <option value="" key="0" />
+                {events
+                  ? events.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
+                label={translate('azimuteErpSpringReactMonolith03App.assetCollection.activity')}
+                id="asset-collection-activity"
+                data-cy="activity"
+                type="select"
+                multiple
+                name="activities"
+              >
+                <option value="" key="0" />
+                {activities
+                  ? activities.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
+                label={translate('azimuteErpSpringReactMonolith03App.assetCollection.scheduledActivity')}
+                id="asset-collection-scheduledActivity"
+                data-cy="scheduledActivity"
+                type="select"
+                multiple
+                name="scheduledActivities"
+              >
+                <option value="" key="0" />
+                {scheduledActivities
+                  ? scheduledActivities.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

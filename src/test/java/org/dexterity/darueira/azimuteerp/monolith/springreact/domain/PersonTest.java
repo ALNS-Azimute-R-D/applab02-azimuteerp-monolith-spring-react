@@ -1,11 +1,16 @@
 package org.dexterity.darueira.azimuteerp.monolith.springreact.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ActivityTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.CustomerTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.DistrictTestSamples.*;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.EventAttendeeTestSamples.*;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.EventProgramTestSamples.*;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.EventTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.OrganizationMembershipTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.PersonTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.PersonTestSamples.*;
+import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.ScheduledActivityTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.SupplierTestSamples.*;
 import static org.dexterity.darueira.azimuteerp.monolith.springreact.domain.TypeOfPersonTestSamples.*;
 
@@ -152,5 +157,115 @@ class PersonTest {
         person.setCustomersLists(new HashSet<>());
         assertThat(person.getCustomersLists()).doesNotContain(customerBack);
         assertThat(customerBack.getBuyerPerson()).isNull();
+    }
+
+    @Test
+    void activitiesListTest() {
+        Person person = getPersonRandomSampleGenerator();
+        Activity activityBack = getActivityRandomSampleGenerator();
+
+        person.addActivitiesList(activityBack);
+        assertThat(person.getActivitiesLists()).containsOnly(activityBack);
+        assertThat(activityBack.getCreatedByUser()).isEqualTo(person);
+
+        person.removeActivitiesList(activityBack);
+        assertThat(person.getActivitiesLists()).doesNotContain(activityBack);
+        assertThat(activityBack.getCreatedByUser()).isNull();
+
+        person.activitiesLists(new HashSet<>(Set.of(activityBack)));
+        assertThat(person.getActivitiesLists()).containsOnly(activityBack);
+        assertThat(activityBack.getCreatedByUser()).isEqualTo(person);
+
+        person.setActivitiesLists(new HashSet<>());
+        assertThat(person.getActivitiesLists()).doesNotContain(activityBack);
+        assertThat(activityBack.getCreatedByUser()).isNull();
+    }
+
+    @Test
+    void promotedEventsListTest() {
+        Person person = getPersonRandomSampleGenerator();
+        Event eventBack = getEventRandomSampleGenerator();
+
+        person.addPromotedEventsList(eventBack);
+        assertThat(person.getPromotedEventsLists()).containsOnly(eventBack);
+        assertThat(eventBack.getPromoteurPerson()).isEqualTo(person);
+
+        person.removePromotedEventsList(eventBack);
+        assertThat(person.getPromotedEventsLists()).doesNotContain(eventBack);
+        assertThat(eventBack.getPromoteurPerson()).isNull();
+
+        person.promotedEventsLists(new HashSet<>(Set.of(eventBack)));
+        assertThat(person.getPromotedEventsLists()).containsOnly(eventBack);
+        assertThat(eventBack.getPromoteurPerson()).isEqualTo(person);
+
+        person.setPromotedEventsLists(new HashSet<>());
+        assertThat(person.getPromotedEventsLists()).doesNotContain(eventBack);
+        assertThat(eventBack.getPromoteurPerson()).isNull();
+    }
+
+    @Test
+    void eventsProgramsListTest() {
+        Person person = getPersonRandomSampleGenerator();
+        EventProgram eventProgramBack = getEventProgramRandomSampleGenerator();
+
+        person.addEventsProgramsList(eventProgramBack);
+        assertThat(person.getEventsProgramsLists()).containsOnly(eventProgramBack);
+        assertThat(eventProgramBack.getResponsiblePerson()).isEqualTo(person);
+
+        person.removeEventsProgramsList(eventProgramBack);
+        assertThat(person.getEventsProgramsLists()).doesNotContain(eventProgramBack);
+        assertThat(eventProgramBack.getResponsiblePerson()).isNull();
+
+        person.eventsProgramsLists(new HashSet<>(Set.of(eventProgramBack)));
+        assertThat(person.getEventsProgramsLists()).containsOnly(eventProgramBack);
+        assertThat(eventProgramBack.getResponsiblePerson()).isEqualTo(person);
+
+        person.setEventsProgramsLists(new HashSet<>());
+        assertThat(person.getEventsProgramsLists()).doesNotContain(eventProgramBack);
+        assertThat(eventProgramBack.getResponsiblePerson()).isNull();
+    }
+
+    @Test
+    void scheduledActivitiesListTest() {
+        Person person = getPersonRandomSampleGenerator();
+        ScheduledActivity scheduledActivityBack = getScheduledActivityRandomSampleGenerator();
+
+        person.addScheduledActivitiesList(scheduledActivityBack);
+        assertThat(person.getScheduledActivitiesLists()).containsOnly(scheduledActivityBack);
+        assertThat(scheduledActivityBack.getResponsiblePerson()).isEqualTo(person);
+
+        person.removeScheduledActivitiesList(scheduledActivityBack);
+        assertThat(person.getScheduledActivitiesLists()).doesNotContain(scheduledActivityBack);
+        assertThat(scheduledActivityBack.getResponsiblePerson()).isNull();
+
+        person.scheduledActivitiesLists(new HashSet<>(Set.of(scheduledActivityBack)));
+        assertThat(person.getScheduledActivitiesLists()).containsOnly(scheduledActivityBack);
+        assertThat(scheduledActivityBack.getResponsiblePerson()).isEqualTo(person);
+
+        person.setScheduledActivitiesLists(new HashSet<>());
+        assertThat(person.getScheduledActivitiesLists()).doesNotContain(scheduledActivityBack);
+        assertThat(scheduledActivityBack.getResponsiblePerson()).isNull();
+    }
+
+    @Test
+    void eventAttendeesListTest() {
+        Person person = getPersonRandomSampleGenerator();
+        EventAttendee eventAttendeeBack = getEventAttendeeRandomSampleGenerator();
+
+        person.addEventAttendeesList(eventAttendeeBack);
+        assertThat(person.getEventAttendeesLists()).containsOnly(eventAttendeeBack);
+        assertThat(eventAttendeeBack.getAttendeePerson()).isEqualTo(person);
+
+        person.removeEventAttendeesList(eventAttendeeBack);
+        assertThat(person.getEventAttendeesLists()).doesNotContain(eventAttendeeBack);
+        assertThat(eventAttendeeBack.getAttendeePerson()).isNull();
+
+        person.eventAttendeesLists(new HashSet<>(Set.of(eventAttendeeBack)));
+        assertThat(person.getEventAttendeesLists()).containsOnly(eventAttendeeBack);
+        assertThat(eventAttendeeBack.getAttendeePerson()).isEqualTo(person);
+
+        person.setEventAttendeesLists(new HashSet<>());
+        assertThat(person.getEventAttendeesLists()).doesNotContain(eventAttendeeBack);
+        assertThat(eventAttendeeBack.getAttendeePerson()).isNull();
     }
 }

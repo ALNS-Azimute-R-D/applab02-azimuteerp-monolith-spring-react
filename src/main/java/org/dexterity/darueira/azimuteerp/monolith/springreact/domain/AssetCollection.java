@@ -14,7 +14,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
  * A AssetCollection.
  */
 @Entity
-@Table(name = "tb_asset_collection")
+@Table(name = "tb_assets_collection")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class AssetCollection implements Serializable {
@@ -43,8 +43,8 @@ public class AssetCollection implements Serializable {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-        name = "rel_tb_asset_collection__asset",
-        joinColumns = @JoinColumn(name = "tb_asset_collection_id"),
+        name = "rel_tb_assets_collection__asset",
+        joinColumns = @JoinColumn(name = "tb_assets_collection_id"),
         inverseJoinColumns = @JoinColumn(name = "asset_id")
     )
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -55,6 +55,35 @@ public class AssetCollection implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "assetCollections", "mainCategory", "ordersItemsLists" }, allowSetters = true)
     private Set<Article> articles = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "assetCollections")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(
+        value = {
+            "mainVenue",
+            "typeOfEvent",
+            "promoteurPerson",
+            "assetCollections",
+            "eventProgramsLists",
+            "ticketsPurchasedLists",
+            "eventAttendeesLists",
+        },
+        allowSetters = true
+    )
+    private Set<Event> events = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "assetCollections")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(
+        value = { "typeOfActivity", "createdByUser", "assetCollections", "scheduledActivitiesLists" },
+        allowSetters = true
+    )
+    private Set<Activity> activities = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "assetCollections")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "program", "activity", "responsiblePerson", "assetCollections" }, allowSetters = true)
+    private Set<ScheduledActivity> scheduledActivities = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -161,6 +190,99 @@ public class AssetCollection implements Serializable {
     public AssetCollection removeArticle(Article article) {
         this.articles.remove(article);
         article.getAssetCollections().remove(this);
+        return this;
+    }
+
+    public Set<Event> getEvents() {
+        return this.events;
+    }
+
+    public void setEvents(Set<Event> events) {
+        if (this.events != null) {
+            this.events.forEach(i -> i.removeAssetCollection(this));
+        }
+        if (events != null) {
+            events.forEach(i -> i.addAssetCollection(this));
+        }
+        this.events = events;
+    }
+
+    public AssetCollection events(Set<Event> events) {
+        this.setEvents(events);
+        return this;
+    }
+
+    public AssetCollection addEvent(Event event) {
+        this.events.add(event);
+        event.getAssetCollections().add(this);
+        return this;
+    }
+
+    public AssetCollection removeEvent(Event event) {
+        this.events.remove(event);
+        event.getAssetCollections().remove(this);
+        return this;
+    }
+
+    public Set<Activity> getActivities() {
+        return this.activities;
+    }
+
+    public void setActivities(Set<Activity> activities) {
+        if (this.activities != null) {
+            this.activities.forEach(i -> i.removeAssetCollection(this));
+        }
+        if (activities != null) {
+            activities.forEach(i -> i.addAssetCollection(this));
+        }
+        this.activities = activities;
+    }
+
+    public AssetCollection activities(Set<Activity> activities) {
+        this.setActivities(activities);
+        return this;
+    }
+
+    public AssetCollection addActivity(Activity activity) {
+        this.activities.add(activity);
+        activity.getAssetCollections().add(this);
+        return this;
+    }
+
+    public AssetCollection removeActivity(Activity activity) {
+        this.activities.remove(activity);
+        activity.getAssetCollections().remove(this);
+        return this;
+    }
+
+    public Set<ScheduledActivity> getScheduledActivities() {
+        return this.scheduledActivities;
+    }
+
+    public void setScheduledActivities(Set<ScheduledActivity> scheduledActivities) {
+        if (this.scheduledActivities != null) {
+            this.scheduledActivities.forEach(i -> i.removeAssetCollection(this));
+        }
+        if (scheduledActivities != null) {
+            scheduledActivities.forEach(i -> i.addAssetCollection(this));
+        }
+        this.scheduledActivities = scheduledActivities;
+    }
+
+    public AssetCollection scheduledActivities(Set<ScheduledActivity> scheduledActivities) {
+        this.setScheduledActivities(scheduledActivities);
+        return this;
+    }
+
+    public AssetCollection addScheduledActivity(ScheduledActivity scheduledActivity) {
+        this.scheduledActivities.add(scheduledActivity);
+        scheduledActivity.getAssetCollections().add(this);
+        return this;
+    }
+
+    public AssetCollection removeScheduledActivity(ScheduledActivity scheduledActivity) {
+        this.scheduledActivities.remove(scheduledActivity);
+        scheduledActivity.getAssetCollections().remove(this);
         return this;
     }
 

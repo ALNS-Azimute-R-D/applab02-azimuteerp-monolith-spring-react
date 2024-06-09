@@ -48,7 +48,7 @@ public class PaymentGateway implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "preferrablePaymentGateway")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "preferrablePaymentGateway", "ordersLists" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "preferrablePaymentGateway", "ordersLists", "ticketsPurchasedLists" }, allowSetters = true)
     private Set<Invoice> invoicesAsPreferrableLists = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "paymentGateway")

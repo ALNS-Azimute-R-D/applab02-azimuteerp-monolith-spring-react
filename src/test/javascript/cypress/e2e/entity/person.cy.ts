@@ -81,6 +81,31 @@ describe('Person e2e test', () => {
       statusCode: 200,
       body: [],
     });
+
+    cy.intercept('GET', '/api/activities', {
+      statusCode: 200,
+      body: [],
+    });
+
+    cy.intercept('GET', '/api/events', {
+      statusCode: 200,
+      body: [],
+    });
+
+    cy.intercept('GET', '/api/event-programs', {
+      statusCode: 200,
+      body: [],
+    });
+
+    cy.intercept('GET', '/api/scheduled-activities', {
+      statusCode: 200,
+      body: [],
+    });
+
+    cy.intercept('GET', '/api/event-attendees', {
+      statusCode: 200,
+      body: [],
+    });
   });
 
   afterEach(() => {

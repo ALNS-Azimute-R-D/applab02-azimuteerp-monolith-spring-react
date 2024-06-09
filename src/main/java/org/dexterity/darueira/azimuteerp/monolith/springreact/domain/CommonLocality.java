@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -67,6 +69,11 @@ public class CommonLocality implements Serializable {
     @NotNull
     @JsonIgnoreProperties(value = { "townCity", "commonLocalitiesLists", "personsLists", "customersLists" }, allowSetters = true)
     private District district;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "commonLocality")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "typeOfVenue", "commonLocality", "eventsLists" }, allowSetters = true)
+    private Set<Venue> venuesLists = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -210,6 +217,37 @@ public class CommonLocality implements Serializable {
 
     public CommonLocality district(District district) {
         this.setDistrict(district);
+        return this;
+    }
+
+    public Set<Venue> getVenuesLists() {
+        return this.venuesLists;
+    }
+
+    public void setVenuesLists(Set<Venue> venues) {
+        if (this.venuesLists != null) {
+            this.venuesLists.forEach(i -> i.setCommonLocality(null));
+        }
+        if (venues != null) {
+            venues.forEach(i -> i.setCommonLocality(this));
+        }
+        this.venuesLists = venues;
+    }
+
+    public CommonLocality venuesLists(Set<Venue> venues) {
+        this.setVenuesLists(venues);
+        return this;
+    }
+
+    public CommonLocality addVenuesList(Venue venue) {
+        this.venuesLists.add(venue);
+        venue.setCommonLocality(this);
+        return this;
+    }
+
+    public CommonLocality removeVenuesList(Venue venue) {
+        this.venuesLists.remove(venue);
+        venue.setCommonLocality(null);
         return this;
     }
 

@@ -26,7 +26,8 @@
       "locationName": "Location Name",
       "postalCode": "Postal Code",
       "geoPolygonArea": "Geo Polygon Area",
-      "district": "District"
+      "district": "District",
+      "venuesList": "Venues List"
     }
   }
 }

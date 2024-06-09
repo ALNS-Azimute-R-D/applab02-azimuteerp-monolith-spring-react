@@ -15,10 +15,10 @@
 
 logging:
   level:
-    ROOT: DEBUG
-    tech.jhipster: DEBUG
+    ROOT: INFO
+    tech.jhipster: INFO
     org.hibernate.SQL: DEBUG
-    org.dexterity.darueira.azimuteerp.monolith.springreact: DEBUG
+    org.dexterity.darueira.azimuteerp.monolith.springreact: INFO
 
 spring:
   devtools:
@@ -32,9 +32,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/azimuteERPSpringReactMonolith03
-    username: azimuteERPSpringReactMonolith03
-    password:
+    url: jdbc:postgresql://postgresql.darueira-devlocal.org.de:5432/DBDarueiraApps01?currentSchema=schm03&ApplicationName=AppLab03AzimuteERPMonolith&ssl=false
+    username: dbadarueiraapps01
+    password: 1a88a1
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -48,6 +48,13 @@ spring:
 
 server:
   port: 8082
+  ssl:
+    key-store: classpath:config/tls/darueira-devlocal.org.de-pkcs.p12
+    key-store-password: pwd1a88a1
+    key-store-type: PKCS12
+    key-alias: darueira-for-all-apps-cert-01
+    ciphers: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+    enabled-protocols: TLSv1.2
 
 # ===================================================================
 # JHipster specific properties

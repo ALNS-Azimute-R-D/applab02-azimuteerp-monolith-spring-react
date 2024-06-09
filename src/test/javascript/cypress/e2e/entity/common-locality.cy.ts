@@ -51,6 +51,11 @@ describe('CommonLocality e2e test', () => {
       body: [district],
     });
 
+    cy.intercept('GET', '/api/venues', {
+      statusCode: 200,
+      body: [],
+    });
+
   });
    */
 

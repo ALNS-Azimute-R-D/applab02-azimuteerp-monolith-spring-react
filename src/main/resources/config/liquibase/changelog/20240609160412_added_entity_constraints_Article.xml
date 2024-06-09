@@ -21,7 +21,7 @@
                                  baseTableName="rel_tb_article__asset_collection"
                                  constraintName="fk_rel_tb_article__asset_collection__asset_collection_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="tb_asset_collection"
+                                 referencedTableName="tb_assets_collection"
                                  />
 
         <addForeignKeyConstraint baseColumnNames="main_category_id"

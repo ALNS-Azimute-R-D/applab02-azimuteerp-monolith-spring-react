@@ -39,6 +39,23 @@ import Category from './category';
 import Article from './article';
 import Order from './order';
 import OrderItem from './order-item';
+import TypeOfArtmedia from './type-of-artmedia';
+import TypeOfArtist from './type-of-artist';
+import ArtisticGenre from './artistic-genre';
+import Artist from './artist';
+import Artwork from './artwork';
+import ArtworkCast from './artwork-cast';
+import TypeOfEvent from './type-of-event';
+import TypeOfVenue from './type-of-venue';
+import TypeOfActivity from './type-of-activity';
+import Venue from './venue';
+import Activity from './activity';
+import Event from './event';
+import Program from './program';
+import EventProgram from './event-program';
+import ScheduledActivity from './scheduled-activity';
+import EventAttendee from './event-attendee';
+import TicketPurchased from './ticket-purchased';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -82,6 +99,23 @@ export default () => {
         <Route path="article/*" element={<Article />} />
         <Route path="order/*" element={<Order />} />
         <Route path="order-item/*" element={<OrderItem />} />
+        <Route path="type-of-artmedia/*" element={<TypeOfArtmedia />} />
+        <Route path="type-of-artist/*" element={<TypeOfArtist />} />
+        <Route path="artistic-genre/*" element={<ArtisticGenre />} />
+        <Route path="artist/*" element={<Artist />} />
+        <Route path="artwork/*" element={<Artwork />} />
+        <Route path="artwork-cast/*" element={<ArtworkCast />} />
+        <Route path="type-of-event/*" element={<TypeOfEvent />} />
+        <Route path="type-of-venue/*" element={<TypeOfVenue />} />
+        <Route path="type-of-activity/*" element={<TypeOfActivity />} />
+        <Route path="venue/*" element={<Venue />} />
+        <Route path="activity/*" element={<Activity />} />
+        <Route path="event/*" element={<Event />} />
+        <Route path="program/*" element={<Program />} />
+        <Route path="event-program/*" element={<EventProgram />} />
+        <Route path="scheduled-activity/*" element={<ScheduledActivity />} />
+        <Route path="event-attendee/*" element={<EventAttendee />} />
+        <Route path="ticket-purchased/*" element={<TicketPurchased />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

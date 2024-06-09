@@ -32,7 +32,8 @@
       "customAttributesDetailsJSON": "Custom Attributes Details JSON",
       "activationStatus": "Activation Status",
       "preferrablePaymentGateway": "Preferrable Payment Gateway",
-      "ordersList": "Orders List"
+      "ordersList": "Orders List",
+      "ticketsPurchasedList": "Tickets Purchased List"
     }
   }
 }

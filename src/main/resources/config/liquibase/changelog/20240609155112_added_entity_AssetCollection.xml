@@ -10,7 +10,7 @@
         Added the entity AssetCollection.
     -->
     <changeSet id="20240609155112-1" author="jhipster">
-        <createTable tableName="tb_asset_collection">
+        <createTable tableName="tb_assets_collection">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -29,16 +29,16 @@
 
     <changeSet id="20240609155112-1-relations" author="jhipster">
 
-        <createTable tableName="rel_tb_asset_collection__asset">
+        <createTable tableName="rel_tb_assets_collection__asset">
             <column name="asset_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="tb_asset_collection_id" type="bigint">
+            <column name="tb_assets_collection_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="tb_asset_collection_id, asset_id" tableName="rel_tb_asset_collection__asset"/>
+        <addPrimaryKey columnNames="tb_assets_collection_id, asset_id" tableName="rel_tb_assets_collection__asset"/>
     </changeSet>
 
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
@@ -53,9 +53,9 @@
     -->
     <changeSet id="20240609155112-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/fake-data/tb_asset_collection.csv"
+                  file="config/liquibase/fake-data/tb_assets_collection.csv"
                   separator=";"
-                  tableName="tb_asset_collection"
+                  tableName="tb_assets_collection"
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="name" type="string"/>

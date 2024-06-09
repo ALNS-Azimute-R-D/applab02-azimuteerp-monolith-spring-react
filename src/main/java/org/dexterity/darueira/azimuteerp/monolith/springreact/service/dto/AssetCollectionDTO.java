@@ -29,6 +29,12 @@ public class AssetCollectionDTO implements Serializable {
 
     private Set<ArticleDTO> articles = new HashSet<>();
 
+    private Set<EventDTO> events = new HashSet<>();
+
+    private Set<ActivityDTO> activities = new HashSet<>();
+
+    private Set<ScheduledActivityDTO> scheduledActivities = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -77,6 +83,30 @@ public class AssetCollectionDTO implements Serializable {
         this.articles = articles;
     }
 
+    public Set<EventDTO> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Set<EventDTO> events) {
+        this.events = events;
+    }
+
+    public Set<ActivityDTO> getActivities() {
+        return activities;
+    }
+
+    public void setActivities(Set<ActivityDTO> activities) {
+        this.activities = activities;
+    }
+
+    public Set<ScheduledActivityDTO> getScheduledActivities() {
+        return scheduledActivities;
+    }
+
+    public void setScheduledActivities(Set<ScheduledActivityDTO> scheduledActivities) {
+        this.scheduledActivities = scheduledActivities;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -108,6 +138,9 @@ public class AssetCollectionDTO implements Serializable {
             ", activationStatus='" + getActivationStatus() + "'" +
             ", assets=" + getAssets() +
             ", articles=" + getArticles() +
+            ", events=" + getEvents() +
+            ", activities=" + getActivities() +
+            ", scheduledActivities=" + getScheduledActivities() +
             "}";
     }
 }

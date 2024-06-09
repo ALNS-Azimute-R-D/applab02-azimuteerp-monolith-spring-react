@@ -22,7 +22,10 @@
       "fullFilenamePath": "Full Filename Path",
       "activationStatus": "Activation Status",
       "asset": "Asset",
-      "article": "Article"
+      "article": "Article",
+      "event": "Event",
+      "activity": "Activity",
+      "scheduledActivity": "Scheduled Activity"
     }
   }
 }
